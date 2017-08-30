@@ -1,0 +1,16 @@
+{
+    "name": "Protocol Buffers Syncronization.",
+    "description": "Syncronization using Google Protocol Buffers.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Adilson Tavares"
+        },
+        {
+            "name": "Lucas Loezer"
+        }
+    ],
+    "require": {
+        "google/protobuf": "*"
+    }
+}
