@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Export Protobuf",
-            "type": "",
+            "name": "Launch Server",
+            "type": "php",
             "request": "launch",
-            "program": "${file}",
+            "program": "${workspaceRoot}/src/server.php",
             "cwd": "${fileDirname}",
             "port": 9000
         }
