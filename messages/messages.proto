@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package tutorial;
+
+message Family {
+
+    repeated Person people = 1;
+}
+
+message Person {
+
+    int32 id = 2;
+    string name = 1;
+}
