@@ -12,8 +12,8 @@ class OrderManager extends Server
     
     function __construct($host, $port){
         parent::__construct($host, $port);
-        this.$database = this.$client->Catalog;
-        this.$collection = this.$database->Books;
+        parent::$database = parent::$client->Catalog;
+        parent::$collection = parent::$database->Books;
     }
 
     //Aqui roda o socket
@@ -24,7 +24,7 @@ class OrderManager extends Server
 
         $sock = socket_create(AF_INET, SOCK_STREAM, 0) or die("Socket create error\n");
 
-        socket_bind($sock, this.$hostname, this.$portno) or die("Socket bind error\n");
+        socket_bind($sock, parent::$hostname, parent::$portno) or die("Socket bind error\n");
         socket_listen($sock, 3) or die("Could not set up socket listener\n");
 
         while(1){
@@ -32,7 +32,7 @@ class OrderManager extends Server
 
             $accept = socket_accept($sock) or die("Could not accept incoming connection\n");
             
-            $catalog_server = fsockopen(this.$hostname, "7834", $errno, $errstr);
+            $catalog_server = fsockopen(parent::$hostname, "7834", $errno, $errstr);
             if(!$catalog_server){
                 echo "$errstr ($errno)";
             }
@@ -45,6 +45,9 @@ class OrderManager extends Server
                 
                 //Escrevendo para outro Server:
                 fwrite($catalog_server, $msg) or die("Could not write to server Catalog Manager");
+
+                //Ler do servidor:
+                //$str = fread($fp, 100000);
 	        }
 
             socket_close($accept);

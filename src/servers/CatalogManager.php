@@ -1,18 +1,18 @@
 <?php
-require_once './Server';
-require 'vendor/autoload.php';
+require_once 'Server.php';
+require '../../vendor/autoload.php';
+require '../Messages/Choice.php';
 
 // Catalog Manager -> HOST: 127.0.0.1 | PORT: 7834
 // Order Manager -> HOST: 127.0.0.1 | PORT: 7835
 // Frontend -> HOST: 127.0.0.1 | PORT: 7836
 
-
 class CatalogManager extends Server
 {     
     function __construct($host, $port){
         parent::__construct($host, $port);
-        this.$database = this.$client->Catalog;
-        this.$collection = this.$database->Books;
+        $this->database = $this->client->Catalog;
+        $this->collection = $this->database->Books;
     }
 
     //Aqui roda o socket
@@ -22,7 +22,7 @@ class CatalogManager extends Server
 
         $sock = socket_create(AF_INET, SOCK_STREAM, 0) or die("Socket create error\n");
 
-        socket_bind($sock, this.$hostname, this.$portno) or die("Socket bind error\n");
+        socket_bind($sock, $this->hostname, $this->portno) or die("Socket bind error\n");
         socket_listen($sock, 3) or die("Could not set up socket listener\n");
 
         while(1){
@@ -47,13 +47,13 @@ class CatalogManager extends Server
     //retorna ID e os titulos dos livros (fuzzy match)
     function search($query)
     {
-        $result = this.$collection->find(['Book.name' => $query]);
+        $result = $this->collection->find(['Book.name' => $query]);
     }
 
     //procura pelo ID do livro e retorna infos -> nome, preco, quantidade
     function find($id)
     {
-        $result = this.$collection->find(['Book.id' => $id]);
+        $result = $this->collection->find(['Book.id' => $id]);
     }
 
     function updatePrice($id, $price)
@@ -67,5 +67,7 @@ class CatalogManager extends Server
     }
 }
 
+$example = new CatalogManager("127.0.0.1", "7834");
+$example->run();
 
 ?>

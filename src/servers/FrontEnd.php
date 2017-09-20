@@ -20,7 +20,7 @@ class FrontEnd extends Server
 
         $sock = socket_create(AF_INET, SOCK_STREAM, 0) or die("Socket create error\n");
 
-        socket_bind($sock, this.$hostname, this.$portno) or die("Socket bind error\n");
+        socket_bind($sock, $this->hostname, $this->portno) or die("Socket bind error\n");
         socket_listen($sock, 3) or die("Could not set up socket listener\n");
         
         while(1){
@@ -28,12 +28,12 @@ class FrontEnd extends Server
 
             $accept = socket_accept($sock) or die("Could not accept incoming connection\n");
             
-            $catalog_server = fsockopen(this.$hostname, "7834", $errno, $errstr);
+            $catalog_server = fsockopen($this->hostname, "7834", $errno, $errstr);
             if(!$catalog_server){
                 echo "$errstr ($errno)";
             }
 
-            $order_server = fsockopen(this.$hostname, "7835", $errno, $errstr);
+            $order_server = fsockopen($this->hostname, "7835", $errno, $errstr);
             if(!$order_server){
                 echo "$errstr ($errno)";
             }
@@ -45,6 +45,10 @@ class FrontEnd extends Server
                 
                 //Escrever pro server:
                 fwrite($catalog_server, $msg) or die("Could not write to server Catalog Manager");
+
+                //Ler do servidor:
+                //$str = fread($fp, 100000);
+
                 //fwrite($order_server, $msg) or die("Could not write to server Catalog Manager");
 
                 //Escrever pro cliente:

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f22d3ccd73374e57a276ca504ed661c4",
+    "content-hash": "219f62c996e4c29b0e2dda5df77c9a76",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -75,16 +75,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.4.0",
+            "version": "v3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/protobuf.git",
-                "reference": "80a37e0782d2d702d52234b62dd4b9ec74fd2c95"
+                "reference": "b04e5cba356212e4e8c66c61bbe0c3a20537c5b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/protobuf/zipball/80a37e0782d2d702d52234b62dd4b9ec74fd2c95",
-                "reference": "80a37e0782d2d702d52234b62dd4b9ec74fd2c95",
+                "url": "https://api.github.com/repos/google/protobuf/zipball/b04e5cba356212e4e8c66c61bbe0c3a20537c5b9",
+                "reference": "b04e5cba356212e4e8c66c61bbe0c3a20537c5b9",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2017-08-15T23:39:12+00:00"
+            "time": "2017-09-14T19:24:28+00:00"
         },
         {
             "name": "mongodb/mongodb",
