@@ -5,9 +5,15 @@ require 'vendor/autoload.php';
 class Server
 {
     private $collection;
+    private $dabase;
     private $client;
 
-    function __construct(){
+    private $hostname;
+    private $portno;
+
+    function __construct($host, $port){
+        this.$hostname = $host;
+        this.$portno = $port;
         this.$client = new MongoDB\Client("mongodb://localhost:27017");
     }
 
