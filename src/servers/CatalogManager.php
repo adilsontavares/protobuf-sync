@@ -1,6 +1,7 @@
 <?php
 require_once 'Server.php';
 require '../../vendor/autoload.php';
+require '../GPBMetadata/Messages.php';
 require '../Messages/Choice.php';
 
 // Catalog Manager -> HOST: 127.0.0.1 | PORT: 7834
@@ -30,13 +31,22 @@ class CatalogManager extends Server
 
             $accept = socket_accept($sock) or die("Could not accept incoming connection\n");
             
-            while($recv = socket_read($accept, 24000))
-	        {
-                echo 'Client Said: ' . $recv;
-                $msg = 'Server Said: ' . $recv . "\r\n";
-                socket_write($accept, $msg, strlen($msg)) or die("Could not write output\n");
-	        }
 
+            $length = socket_read($accept, 4);
+            $length = unpack("Lheader", $length);
+            $length = $length['header'];
+            
+            $message = socket_read($accept, $length);
+            $message = unpack("A*header", $message);
+            $message = $message['header']; 
+            
+            $proto_message = new \Messages\Choice();
+            $proto_message->mergeFromString($message);
+
+            $received_message = new \Messages\Choice();
+            $received_message->mergeFromString($PROTO['header']);
+            
+            echo 'Masoq: '. $received_message->getIdMessage() . "\n";
             socket_close($accept);
             
             echo "socket connection done\n";
@@ -67,7 +77,7 @@ class CatalogManager extends Server
     }
 }
 
-$example = new CatalogManager("127.0.0.1", "7834");
+$example = new CatalogManager("127.0.0.1", "9090");
 $example->run();
 
 ?>

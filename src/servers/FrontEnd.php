@@ -45,7 +45,7 @@ class FrontEnd extends Server
                 
                 //Escrever pro server:
                 fwrite($catalog_server, $msg) or die("Could not write to server Catalog Manager");
-
+                
                 //Ler do servidor:
                 //$str = fread($fp, 100000);
 
