@@ -6,6 +6,17 @@ require __DIR__ . '/../Bridge/FromMongo.php';
 
 class CatalogManager extends Server
 {
+    function __construct($host, $port){
+        $map = [
+            1 => "search",
+            2 => "find",
+            4 => "updatePrice",
+            5 => "updateCount",
+            "send" => "sendMessage"
+        ];
+        parent::__construct($host, $port, $map);
+    }
+    
     function search($query)
     {
         $result = $this->db->catalog->find(['book.name' => new MongoDB\BSON\Regex($query, "i")]);
