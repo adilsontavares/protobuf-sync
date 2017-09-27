@@ -14,10 +14,10 @@
   <namespace name="">
     <class name="ServerConfig" src="Config/Servers.php" xml="classes/ServerConfig.xml"/>
     
-    <class name="CatalogManager" src="servers/CatalogManager.php" xml="classes/CatalogManager.xml"/>
-    <class name="OrderManager" src="servers/OrderManager.php" xml="classes/OrderManager.xml"/>
-    <class name="FrontEnd" src="servers/FrontEnd.php" xml="classes/FrontEnd.xml"/>
-  <class name="Server" src="servers/Server.php" xml="classes/Server.xml"/></namespace>
+    
+    
+    
+  <class name="Server" src="servers/Server.php" description="Server's generic class." xml="classes/Server.xml"/><class name="CatalogManager" src="servers/CatalogManager.php" description="Catalog Manager Server's class." xml="classes/CatalogManager.xml"/><class name="OrderManager" src="servers/OrderManager.php" description="Order Manager Server." xml="classes/OrderManager.xml"/><class name="FrontEnd" src="servers/FrontEnd.php" description="Frontend Server" xml="classes/FrontEnd.xml"/></namespace>
   <namespace name="GPBMetadata">
     <class name="Messages" src="GPBMetadata/Messages.php" xml="classes/GPBMetadata_Messages.xml"/>
   </namespace>

@@ -12,11 +12,26 @@ require_once __DIR__ . '/../Bridge/FromMongo.php';
 */
 class CatalogManager extends Server
 {
+    /**
+    * Search a Book Action ID.
+    */
     static $SEARCH = 1;
+    /**
+    * Find a Book Action ID.
+    */
     static $FIND = 2;
+    /**
+    * Update Book's Price Action ID.
+    */
     static $UPDATE_PRICE = 3;
+    /**
+    * Update Book's Count Action ID.
+    */
     static $UPDATE_COUNT = 4;
 
+    /**
+    * CatalogManager Server's constructor.
+    */
     function __construct() 
     {
         parent::__construct('catalog', [
@@ -26,7 +41,10 @@ class CatalogManager extends Server
             CatalogManager::$UPDATE_COUNT => "updateCount"
         ]);
     }
-
+    /**
+    * Search a book by name.
+    * @param object $data, protobuf object that contains the book name. 
+    */
     function search($data)
     {
         $request = new Messages\RequestByQuery();
@@ -46,7 +64,10 @@ class CatalogManager extends Server
 
         return $hue;
     }
-
+    /**
+    * Search a book by ID.
+    * @param object $data, protobuf object that contains the book id. 
+    */
     function find($data)
     {
         $request = new Messages\RequestById();
@@ -57,7 +78,10 @@ class CatalogManager extends Server
         $result = $this->db->catalog->findOne(['_id' => $request->getId()]);
         return to_catalog($result);
     }
-
+    /**
+    * Update a book's price.
+    * @param object $data, protobuf object that contains the book's id and new price. 
+    */
     function updatePrice($data)
     {
         $request = new Messages\UpdateBookPrice();
@@ -77,7 +101,10 @@ class CatalogManager extends Server
 
         return $this->find($id);
     }
-
+    /**
+    * Update a book's count.
+    * @param object $data, protobuf object that contains the book's id and new count. 
+    */
     function updateCount($data)
     {
         $request = new Messages\UpdateCatalogItemCount();

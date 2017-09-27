@@ -8,9 +8,21 @@ require_once __DIR__ . '/../Config/Servers.php';
 */
 class Server
 {
+    /**
+    * MongoDB collection's ID.
+    */
     public $collection;
+    /**
+    * MongoDB database's ID.
+    */
     public $database;
+    /**
+    * MongoDB's address ID.
+    */
     public $client;
+    /**
+    * Server's configuration set.
+    */
     public $config;
 
     /**

@@ -1,69 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class xmlns="http://xml.phpdox.net/src" full="OrderManager" namespace="" name="OrderManager" abstract="false" final="false" start="7" end="37">
-  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/servers" file="OrderManager.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/servers/OrderManager.php" size="1009" time="2017-09-27T22:07:39+00:00" unixtime="1506550059" sha1="e95157a534a30b22f77fb88c58ef17574c9157ad" relative="servers/OrderManager.php"/>
+<class xmlns="http://xml.phpdox.net/src" full="OrderManager" namespace="" name="OrderManager" abstract="false" final="false" start="10" end="47">
+  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/servers" file="OrderManager.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/servers/OrderManager.php" size="1187" time="2017-09-27T22:44:38+00:00" unixtime="1506552278" sha1="fc16c366740fab70359fbea27e04f1a5e931708b" relative="servers/OrderManager.php"/>
+  <docblock>
+    <description compact="Order Manager Server."/>
+  </docblock>
   <extends full="Server" namespace="" name="Server"/>
-  <member name="BUY" default="1" type="integer" visibility="public" static="true" line="9"/>
-  <constructor name="__construct" start="11" end="16" abstract="false" final="false" static="false" visibility="public"/>
-  <method name="buy" start="18" end="36" abstract="false" final="false" static="false" visibility="public">
+  <member name="BUY" default="1" type="integer" visibility="public" static="true" line="12"/>
+  <constructor name="__construct" start="17" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="OrderManager Server's constructor."/>
+    </docblock>
+  </constructor>
+  <method name="buy" start="28" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Buy a book."/>
+      <param description="protobuf object." type="string" variable="$data"/>
+    </docblock>
     <parameter name="data" byreference="false" type="{unknown}"/>
     <inline>
-      <comment value="$count = $catalog-&gt;getCount() - 1;" line="24"/>
-      <comment value="$update = new Messages\UpdateCatalogItemCount();" line="26"/>
-      <comment value="$update-&gt;setId($id);" line="27"/>
-      <comment value="$update-&gt;setCount($count);" line="28"/>
-      <comment value="$response = new Messages\Book();" line="30"/>
-      <comment value="$response-&gt;setName('Olaaaa');" line="31"/>
-      <comment value="$response-&gt;setPrice(12.5);" line="32"/>
-      <comment value="return $this-&gt;request('catalog', 'UPDATE_COUNT', $update);" line="34"/>
+      <comment value="$count = $catalog-&gt;getCount() - 1;" line="34"/>
+      <comment value="$update = new Messages\UpdateCatalogItemCount();" line="36"/>
+      <comment value="$update-&gt;setId($id);" line="37"/>
+      <comment value="$update-&gt;setCount($count);" line="38"/>
+      <comment value="$response = new Messages\Book();" line="40"/>
+      <comment value="$response-&gt;setName('Olaaaa');" line="41"/>
+      <comment value="$response-&gt;setPrice(12.5);" line="42"/>
+      <comment value="return $this-&gt;request('catalog', 'UPDATE_COUNT', $update);" line="44"/>
     </inline>
   </method>
   <parent full="Server" namespace="" name="Server">
-    <member name="collection" visibility="public" static="false" line="7"/>
-    <member name="database" visibility="public" static="false" line="8"/>
-    <member name="client" visibility="public" static="false" line="9"/>
-    <member name="config" visibility="public" static="false" line="10"/>
-    <constructor name="__construct" start="17" end="24" abstract="false" final="false" static="false" visibility="public">
+    <member name="collection" visibility="public" static="false" line="11"/>
+    <member name="database" visibility="public" static="false" line="12"/>
+    <member name="client" visibility="public" static="false" line="13"/>
+    <member name="config" visibility="public" static="false" line="14"/>
+    <constructor name="__construct" start="21" end="28" abstract="false" final="false" static="false" visibility="public">
       <docblock>
-        <description compact="Construct $name - Server's ID $actions - Server's Action. Example: Find a book, Search by ID, Buy a book, etc.."/>
+        <description compact="Server's constructor."/>
+        <param description="Server's ID" type="string" variable="$name"/>
+        <param description="Server's Action. Example: Find a book, Search by ID, Buy a book, etc.." type="array" variable="$actions"/>
       </docblock>
       <parameter name="name" byreference="false" type="{unknown}"/>
       <parameter name="actions" byreference="false" type="{unknown}"/>
     </constructor>
-    <method name="run" start="29" end="45" abstract="false" final="false" static="false" visibility="public">
+    <method name="run" start="33" end="49" abstract="false" final="false" static="false" visibility="public">
       <docblock>
-        <description compact="Run This's the function that put the server on running. Listing to a socket."/>
+        <description compact="Put the server on running. Listing to a socket."/>
       </docblock>
     </method>
-    <method name="receiveRequest" start="53" end="64" abstract="false" final="false" static="false" visibility="public">
+    <method name="receiveRequest" start="57" end="68" abstract="false" final="false" static="false" visibility="public">
       <docblock>
-        <description compact="ReceiveRequest This's the function receive: $client - A client to connect through socket $id - An ID specifying which action the Server will do.">$payload - The message.</description>
+        <description compact="Receive request from a client through a socket."/>
+        <param description="client to connect through socket." type="string" variable="$client"/>
+        <param description="specifying which action the Server will do." type="object" variable="$id"/>
+        <param description="message." type="object" variable="$payload"/>
       </docblock>
       <parameter name="client" byreference="false" type="{unknown}"/>
       <parameter name="id" byreference="true" type="{unknown}"/>
       <parameter name="payload" byreference="true" type="{unknown}"/>
     </method>
-    <method name="sendResponse" start="66" end="72" abstract="false" final="false" static="false" visibility="public">
+    <method name="sendResponse" start="75" end="81" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Send a message to a client/server through a socket."/>
+        <param description="socket address to connect." type="string" variable="$sock"/>
+        <param description="message to send. Protobuf object." type="object" variable="$data"/>
+      </docblock>
       <parameter name="sock" byreference="false" type="{unknown}"/>
       <parameter name="data" byreference="false" type="{unknown}"/>
     </method>
-    <method name="receiveResponse" start="74" end="84" abstract="false" final="false" static="false" visibility="public">
+    <method name="receiveResponse" start="87" end="97" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Receive an answer from a client through a socket."/>
+        <param description="socket address to connect." type="string" variable="$client"/>
+      </docblock>
       <parameter name="client" byreference="false" type="{unknown}"/>
     </method>
-    <method name="sendRequest" start="86" end="92" abstract="false" final="false" static="false" visibility="public">
+    <method name="sendRequest" start="105" end="111" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Send a request to a server through a socket."/>
+        <param description="socket address to connect." type="string" variable="$sock"/>
+        <param description="request's id." type="object" variable="$id"/>
+        <param description="protobuf object that will be sended to a socket." type="object" variable="$data"/>
+      </docblock>
       <parameter name="sock" byreference="false" type="{unknown}"/>
       <parameter name="id" byreference="false" type="{unknown}"/>
       <parameter name="data" byreference="false" type="{unknown}"/>
     </method>
-    <method name="sendRequestTo" start="94" end="103" abstract="false" final="false" static="false" visibility="public">
+    <method name="sendRequestTo" start="119" end="128" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Start a connection with some socket and send a request to a server."/>
+        <param description="server's socket address to connect." type="string" variable="$server"/>
+        <param description="request's id." type="object" variable="$id"/>
+        <param description="protobuf object that will be sended to a socket." type="object" variable="$data"/>
+      </docblock>
       <parameter name="server" byreference="false" type="{unknown}"/>
       <parameter name="id" byreference="false" type="{unknown}"/>
       <parameter name="data" byreference="false" type="{unknown}"/>
     </method>
-    <method name="process" start="105" end="108" abstract="false" final="false" static="false" visibility="public">
+    <method name="process" start="135" end="138" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Process the request using a action's map."/>
+        <param description="request's id." type="object" variable="$id"/>
+        <param description="args." type="object" variable="$data"/>
+      </docblock>
       <parameter name="id" byreference="false" type="{unknown}"/>
       <parameter name="data" byreference="false" type="{unknown}"/>
     </method>
-    <method name="request" start="110" end="118" abstract="false" final="false" static="false" visibility="public">
+    <method name="request" start="146" end="154" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Send a request to a server through a socket."/>
+        <param description="socket address to connect." type="string" variable="$sock"/>
+        <param description="request's id." type="object" variable="$id"/>
+        <param description="protobuf object that will be sended to a socket." type="object" variable="$data"/>
+      </docblock>
       <parameter name="target" byreference="false" type="{unknown}"/>
       <parameter name="messageId" byreference="false" type="{unknown}"/>
       <parameter name="data" byreference="false" type="{unknown}"/>

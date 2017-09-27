@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/home/loezer/ASD/2trabalho/protobuf-sync/src/servers" file="OrderManager.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/servers/OrderManager.php" size="1009" time="2017-09-27T22:07:39+00:00" unixtime="1506550059" sha1="e95157a534a30b22f77fb88c58ef17574c9157ad" relative="servers/OrderManager.php"/>
+  <file xmlns="http://xml.phpdox.net/src" path="/home/loezer/ASD/2trabalho/protobuf-sync/src/servers" file="OrderManager.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/servers/OrderManager.php" size="1187" time="2017-09-27T22:44:38+00:00" unixtime="1506552278" sha1="fc16c366740fab70359fbea27e04f1a5e931708b" relative="servers/OrderManager.php"/>
   <line no="1">
     <token name="T_OPEN_TAG">&lt;?php</token>
   </line>
@@ -46,6 +46,15 @@
   </line>
   <line no="6"/>
   <line no="7">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="8">
+    <token name="T_DOC_COMMENT">* Order Manager Server. </token>
+  </line>
+  <line no="9">
+    <token name="T_DOC_COMMENT">*/</token>
+  </line>
+  <line no="10">
     <token name="T_CLASS">class</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">OrderManager</token>
@@ -54,10 +63,10 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_STRING">Server</token>
   </line>
-  <line no="8">
+  <line no="11">
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="9">
+  <line no="12">
     <token name="T_WHITESPACE">    </token>
     <token name="T_STATIC">static</token>
     <token name="T_WHITESPACE"> </token>
@@ -68,8 +77,20 @@
     <token name="T_LNUMBER">1</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="10"/>
-  <line no="11">
+  <line no="13">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="14">
+    <token name="T_DOC_COMMENT">    * </token>
+  </line>
+  <line no="15">
+    <token name="T_DOC_COMMENT">    * OrderManager Server's constructor. </token>
+  </line>
+  <line no="16">
+    <token name="T_DOC_COMMENT">    */</token>
+  </line>
+  <line no="17">
     <token name="T_WHITESPACE">    </token>
     <token name="T_FUNCTION">function</token>
     <token name="T_WHITESPACE"> </token>
@@ -77,11 +98,11 @@
     <token name="T_PHPDOX_OPEN_BRACKET">(</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
   </line>
-  <line no="12">
+  <line no="18">
     <token name="T_WHITESPACE">    </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="13">
+  <line no="19">
     <token name="T_WHITESPACE">        </token>
     <token name="T_STRING">parent</token>
     <token name="T_DOUBLE_COLON">::</token>
@@ -92,7 +113,7 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_PHPDOX_OPEN_SQUARE">[</token>
   </line>
-  <line no="14">
+  <line no="20">
     <token name="T_WHITESPACE">            </token>
     <token name="T_STRING">OrderManager</token>
     <token name="T_DOUBLE_COLON">::</token>
@@ -102,18 +123,33 @@
     <token name="T_WHITESPACE"> </token>
     <token name="T_CONSTANT_ENCAPSED_STRING">"buy"</token>
   </line>
-  <line no="15">
+  <line no="21">
     <token name="T_WHITESPACE">        </token>
     <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="16">
+  <line no="22">
     <token name="T_WHITESPACE">    </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="17"/>
-  <line no="18">
+  <line no="23">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="24">
+    <token name="T_DOC_COMMENT">    * </token>
+  </line>
+  <line no="25">
+    <token name="T_DOC_COMMENT">    * Buy a book.</token>
+  </line>
+  <line no="26">
+    <token name="T_DOC_COMMENT">    * @param string $data, protobuf object.</token>
+  </line>
+  <line no="27">
+    <token name="T_DOC_COMMENT">    */</token>
+  </line>
+  <line no="28">
     <token name="T_WHITESPACE">    </token>
     <token name="T_FUNCTION">function</token>
     <token name="T_WHITESPACE"> </token>
@@ -122,11 +158,11 @@
     <token name="T_VARIABLE">$data</token>
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
   </line>
-  <line no="19">
+  <line no="29">
     <token name="T_WHITESPACE">    </token>
     <token name="T_PHPDOX_OPEN_CURLY">{</token>
   </line>
-  <line no="20">
+  <line no="30">
     <token name="T_WHITESPACE">        </token>
     <token name="T_VARIABLE">$request</token>
     <token name="T_WHITESPACE"> </token>
@@ -141,7 +177,7 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="21">
+  <line no="31">
     <token name="T_WHITESPACE">        </token>
     <token name="T_VARIABLE">$request</token>
     <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -151,10 +187,10 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="22">
+  <line no="32">
     <token name="T_WHITESPACE">        </token>
   </line>
-  <line no="23">
+  <line no="33">
     <token name="T_WHITESPACE">        </token>
     <token name="T_VARIABLE">$catalog</token>
     <token name="T_WHITESPACE"> </token>
@@ -174,56 +210,56 @@
     <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="24">
+  <line no="34">
     <token name="T_WHITESPACE">        </token>
     <token name="T_COMMENT">// $count = $catalog-&gt;getCount() - 1;</token>
   </line>
-  <line no="25"/>
-  <line no="26">
+  <line no="35"/>
+  <line no="36">
     <token name="T_WHITESPACE">        </token>
     <token name="T_COMMENT">// $update = new Messages\UpdateCatalogItemCount();</token>
   </line>
-  <line no="27">
+  <line no="37">
     <token name="T_WHITESPACE">        </token>
     <token name="T_COMMENT">// $update-&gt;setId($id);</token>
   </line>
-  <line no="28">
+  <line no="38">
     <token name="T_WHITESPACE">        </token>
     <token name="T_COMMENT">// $update-&gt;setCount($count);</token>
   </line>
-  <line no="29"/>
-  <line no="30">
+  <line no="39"/>
+  <line no="40">
     <token name="T_WHITESPACE">        </token>
     <token name="T_COMMENT">// $response = new Messages\Book();</token>
   </line>
-  <line no="31">
+  <line no="41">
     <token name="T_WHITESPACE">        </token>
     <token name="T_COMMENT">// $response-&gt;setName('Olaaaa');</token>
   </line>
-  <line no="32">
+  <line no="42">
     <token name="T_WHITESPACE">        </token>
     <token name="T_COMMENT">// $response-&gt;setPrice(12.5);</token>
   </line>
-  <line no="33"/>
-  <line no="34">
+  <line no="43"/>
+  <line no="44">
     <token name="T_WHITESPACE">        </token>
     <token name="T_COMMENT">// return $this-&gt;request('catalog', 'UPDATE_COUNT', $update);</token>
   </line>
-  <line no="35">
+  <line no="45">
     <token name="T_WHITESPACE">        </token>
     <token name="T_RETURN">return</token>
     <token name="T_WHITESPACE"> </token>
     <token name="T_VARIABLE">$catalog</token>
     <token name="T_PHPDOX_SEMICOLON">;</token>
   </line>
-  <line no="36">
+  <line no="46">
     <token name="T_WHITESPACE">    </token>
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="37">
+  <line no="47">
     <token name="T_PHPDOX_CLOSE_CURLY">}</token>
   </line>
-  <line no="38">
+  <line no="48">
     <token name="T_CLOSE_TAG">?&gt;</token>
   </line>
 </source>
