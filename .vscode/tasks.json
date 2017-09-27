@@ -12,6 +12,11 @@
                 "--php_out=src",
                 "messages/messages.proto"
             ]
+        },
+        {
+            "taskName": "Generate Documentation",
+            "type": "shell",
+            "command": "cd ${workspaceDir} & phpdox"
         }
     ]
 }
