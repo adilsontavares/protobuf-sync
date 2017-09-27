@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . '/../Messages/Book.php';
-require __DIR__ . '/../Messages/CatalogItem.php';
+require_once __DIR__ . '/../Messages/Book.php';
+require_once __DIR__ . '/../Messages/CatalogItem.php';
 
 function many($items, $func) {
 

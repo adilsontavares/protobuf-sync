@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Messages.Book</code>
+ * Generated from protobuf message <code>Messages.UpdateBookPrice</code>
  */
-class Book extends \Google\Protobuf\Internal\Message
+class UpdateBookPrice extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>int32 id = 1;</code>
      */
-    private $name = '';
+    private $id = 0;
     /**
      * Generated from protobuf field <code>float price = 2;</code>
      */
@@ -28,23 +28,23 @@ class Book extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>int32 id = 1;</code>
+     * @return int
      */
-    public function getName()
+    public function getId()
     {
-        return $this->name;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>string name = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int32 id = 1;</code>
+     * @param int $var
      * @return $this
      */
-    public function setName($var)
+    public function setId($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->name = $var;
+        GPBUtil::checkInt32($var);
+        $this->id = $var;
 
         return $this;
     }

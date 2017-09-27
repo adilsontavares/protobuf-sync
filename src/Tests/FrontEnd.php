@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . '/Test.php';
-require __DIR__ . '/../Servers/FrontEnd.php';
+require_once __DIR__ . '/Test.php';
+require_once __DIR__ . '/../Servers/FrontEnd.php';
 
 $server = new FrontEnd('127.0.0.1', 8888);
 test('Search for "fund"', $server->search('fund'));

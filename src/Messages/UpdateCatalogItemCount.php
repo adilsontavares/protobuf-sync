@@ -9,20 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>Messages.CatalogItem</code>
+ * Generated from protobuf message <code>Messages.UpdateCatalogItemCount</code>
  */
-class CatalogItem extends \Google\Protobuf\Internal\Message
+class UpdateCatalogItemCount extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>int32 id = 1;</code>
      */
     private $id = 0;
     /**
-     * Generated from protobuf field <code>.Messages.Book book = 2;</code>
-     */
-    private $book = null;
-    /**
-     * Generated from protobuf field <code>int32 count = 3;</code>
+     * Generated from protobuf field <code>int32 count = 2;</code>
      */
     private $count = 0;
 
@@ -54,29 +50,7 @@ class CatalogItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.Messages.Book book = 2;</code>
-     * @return \Messages\Book
-     */
-    public function getBook()
-    {
-        return $this->book;
-    }
-
-    /**
-     * Generated from protobuf field <code>.Messages.Book book = 2;</code>
-     * @param \Messages\Book $var
-     * @return $this
-     */
-    public function setBook($var)
-    {
-        GPBUtil::checkMessage($var, \Messages\Book::class);
-        $this->book = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 count = 3;</code>
+     * Generated from protobuf field <code>int32 count = 2;</code>
      * @return int
      */
     public function getCount()
@@ -85,7 +59,7 @@ class CatalogItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 count = 3;</code>
+     * Generated from protobuf field <code>int32 count = 2;</code>
      * @param int $var
      * @return $this
      */

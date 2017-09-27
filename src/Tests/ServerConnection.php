@@ -2,7 +2,7 @@
 
 include_once './vendor/autoload.php';
 //include_once('src/Messages/Choice.php');
-require 'src/GPBMetadata/Messages.php';
+require_once 'src/GPBMetadata/Messages.php';
 
 require('src/Messages/Choice.php');
 //
