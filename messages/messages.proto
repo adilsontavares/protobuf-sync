@@ -40,6 +40,10 @@ message CatalogItem {
     int32 count = 3;
 }
 
+message CatalogItems {
+    repeated CatalogItem items = 1;
+}
+
 message Books {
     repeated Book books = 1;
 }

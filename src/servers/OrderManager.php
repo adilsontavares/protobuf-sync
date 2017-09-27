@@ -19,20 +19,27 @@ class OrderManager extends Server
     {
         $request = new Messages\RequestById();
         $request->mergeFromString($data);
+        $id = $request->getId();
+
+        printf("Buy book with id %d.\n", $id);
         
-        $catalog = $this->request('catalog', 'FIND', $request);
-        // $count = $catalog->getCount() - 1;
+        $response = $this->request('catalog', 'FIND', $request);
+        $item = new Messages\CatalogItem();
+        $item->mergeFromString($response);
 
-        // $update = new Messages\UpdateCatalogItemCount();
-        // $update->setId($id);
-        // $update->setCount($count);
+        $count = $item->getCount() - 1;
 
-        // $response = new Messages\Book();
-        // $response->setName('Olaaaa');
-        // $response->setPrice(12.5);
+        $update = new Messages\UpdateCatalogItemCount();
+        $update->setId($id);
+        $update->setCount($count);
 
-        // return $this->request('catalog', 'UPDATE_COUNT', $update);
-        return $catalog;
+        // printf("\n");
+
+        $response = $this->request('catalog', 'UPDATE_COUNT', $update);
+        $item = new Messages\CatalogItem();
+        // $item->mergeFromString($response);
+
+        return $item;
     }
 }
 ?>
