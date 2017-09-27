@@ -1,5 +1,5 @@
 <?php
-require_once './Server';
+require_once __DIR__ . '/Server';
 
 // Catalog Manager -> HOST: 127.0.0.1 | PORT: 7834
 // Order Manager -> HOST: 127.0.0.1 | PORT: 7835
@@ -14,7 +14,7 @@ class FrontEnd extends Server
 
     //Aqui roda o socket
     //Esse server recebe informacoes do Client e manda pros Outros servidores
-    function run(){
+    function run() {
         ob_implicit_flush();
         set_time_limit(0);
 

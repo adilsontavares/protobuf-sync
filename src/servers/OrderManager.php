@@ -1,7 +1,7 @@
 <?php
-require_once './Server';
-require 'vendor/autoload.php';
-require 'Catalog/Catalog_Item.php';
+require_once __DIR__ . '/Server';
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/Catalog/Catalog_Item.php';
 
 // Catalog Manager -> HOST: 127.0.0.1 | PORT: 7834
 // Order Manager -> HOST: 127.0.0.1 | PORT: 7835

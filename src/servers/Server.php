@@ -1,5 +1,5 @@
 <?php
-require '../../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 
 class Server
 {
@@ -14,8 +14,11 @@ class Server
         $this->hostname = $host;
         $this->portno = $port;
         $this->client = new MongoDB\Client("mongodb://localhost:27017");
+        $this->db = $this->client->book_store;
     }
 
-    function run(){}
+    function run() {
+        
+    }
 }
 ?>
