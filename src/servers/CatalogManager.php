@@ -6,6 +6,21 @@ require __DIR__ . '/../Bridge/FromMongo.php';
 
 class CatalogManager extends Server
 {
+    static $SEARCH = 1;
+    static $FIND = 2;
+    static $UPDATE_PRICE = 3;
+    static $UPDATE_COUNT = 4;
+
+    function __construct($host, $port) 
+    {
+        parent::__construct($host, $port, [
+            CatalogManager::$SEARCH => "search",
+            CatalogManager::$FIND => "find",
+            CatalogManager::$UPDATE_PRICE => "updatePrice",
+            CatalogManager::$UPDATE_COUNT => "updateCount"
+        ]);
+    }
+
     function search($query)
     {
         $result = $this->db->catalog->find(['book.name' => new MongoDB\BSON\Regex($query, "i")]);
@@ -18,8 +33,11 @@ class CatalogManager extends Server
         return to_catalog($result);
     }
 
-    function updatePrice($id, $price)
+    function updatePrice($data)
     {
+        $id = $data->id;
+        $price = $data->price;
+
         $this->db->catalog->updateOne(['_id' => $id],
         [
             '$set' => [
@@ -30,8 +48,11 @@ class CatalogManager extends Server
         return $this->find($id);
     }
 
-    function updateCount($id, $count)
+    function updateCount($data)
     {
+        $id = $data->id;
+        $count = $data->count;
+
         $this->db->catalog->updateOne(['_id' => $id],
         [
             '$set' => [

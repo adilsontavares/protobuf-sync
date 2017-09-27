@@ -10,15 +10,32 @@ class Server
     public $hostname;
     public $portno;
 
-    function __construct($host, $port){
+    function __construct($host, $port, $actions)
+    {
         $this->hostname = $host;
         $this->portno = $port;
         $this->client = new MongoDB\Client("mongodb://localhost:27017");
         $this->db = $this->client->book_store;
+        $this->actions = $actions;
     }
 
-    function run() {
-        
+    function run() 
+    {
+    }
+
+    function process($id, $payload)
+    {
+        return $this->{$this->actions[$id]}($payload);
+    }
+
+    function request($target, $messageId, $payload)
+    {
+        $targetClass = ucfirst($target) . "Manager";
+
+        $server = new $targetClass('127.0.0.1', 0);
+        $id = $targetClass::${$messageId};
+
+        return $server->process($id, $payload);
     }
 }
 ?>
