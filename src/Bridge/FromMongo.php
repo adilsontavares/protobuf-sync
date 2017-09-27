@@ -26,8 +26,15 @@ function assign($obj, $mongo, $prop) {
 }
 
 function to_book($data) {
-
+    
     $book = new Messages\Book();
+
+    if (!$data)
+    {
+        $book->setId(-1);
+        return $book;
+    }
+    
     assign($book, $data, 'name');
     assign($book, $data, 'price');
 
@@ -37,6 +44,12 @@ function to_book($data) {
 function to_catalog($data) {
 
     $item = new Messages\CatalogItem();
+
+    if (!$data)
+    {
+        $item->setId(-1);
+        return $item;
+    }
     
     assign($item, $data, 'id');
     assign($item, $data, 'count');

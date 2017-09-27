@@ -8,6 +8,8 @@ use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
+require_once __DIR__ . "/../Debug.php";
+
 /**
  * Generated from protobuf message <code>Messages.CatalogItem</code>
  */
@@ -97,5 +99,9 @@ class CatalogItem extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+    public function debug()
+    {
+        debug_catalog_item($this);
+    }
 }
 

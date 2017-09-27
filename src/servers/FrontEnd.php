@@ -31,7 +31,11 @@ class FrontEnd extends Server
         $data = new Messages\RequestByQuery();
         $data->setQuery($query);
 
-        return $this->request('catalog', 'SEARCH', $data);
+        $response = $this->request('catalog', 'SEARCH', $data);
+        $item = new Messages\CatalogItems();
+        $item->mergeFromString($response);
+
+        return $item;
     }
     /**
     * 
@@ -42,8 +46,13 @@ class FrontEnd extends Server
     {
         $data = new Messages\RequestById();
         $data->setId($id);
+        
+        $response = $this->request('catalog', 'FIND', $data);
+        
+        $item = new Messages\CatalogItem();
+        $item->mergeFromString($response);
 
-        return $this->request('catalog', 'FIND', $data);
+        return $item;
     }
     /**
     * Buy a book.
@@ -54,7 +63,11 @@ class FrontEnd extends Server
         $data = new Messages\RequestById();
         $data->setId($id);
 
-        return $this->request('order', 'BUY', $data);
+        $response = $this->request('order', 'BUY', $data);
+        $item = new Messages\CatalogItem();
+        $item->mergeFromString($response);
+
+        return $item;
     }
     /**
     * This function put the FrontEnd Server on running.
@@ -120,11 +133,7 @@ class FrontEnd extends Server
         printf("-> Query: ");
         fscanf($this->stdin, "%s", $query);
 
-        $result = $this->search($query);
-        
-        $items = new Messages\CatalogItems();
-        $items->mergeFromString($result);
-
+        $items = $this->search($query);
         debug_catalog_items($items);
     }
     /**
@@ -135,11 +144,7 @@ class FrontEnd extends Server
         printf("-> Id: ");
         fscanf($this->stdin, "%d", $id);
 
-        $result = $this->details($id);
-        
-        $item = new Messages\CatalogItem();
-        $item->mergeFromString($result);
-
+        $item = $this->details($id);
         debug_catalog_item($item);
     }
     /**
@@ -150,11 +155,7 @@ class FrontEnd extends Server
         printf("-> Id: ");
         fscanf($this->stdin, "%d", $id);
 
-        $result = $this->buy($id);
-
-        $item = new Messages\CatalogItem();
-        $item->mergeFromString($result);
-
+        $item = $this->buy($id);
         debug_catalog_item($item);
     }
 }

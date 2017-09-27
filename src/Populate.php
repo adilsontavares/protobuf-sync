@@ -17,7 +17,7 @@
             'name' => 'Fundação',
             'price' => 18.75
         ],
-        'count' => 12
+        'count' => 3
     ]);
 
     $catalog->insertOne([

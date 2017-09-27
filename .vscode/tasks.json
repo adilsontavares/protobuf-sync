@@ -16,7 +16,7 @@
         {
             "taskName": "Generate Documentation",
             "type": "shell",
-            "command": "cd ${workspaceDir} & phpdox"
+            "command": "cd ${workspaceRoot} & phpdox"
         }
     ]
 }

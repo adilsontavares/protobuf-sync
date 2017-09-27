@@ -74,7 +74,7 @@ class Server
         $id = $header['id'];
         $length = $header['length'];
         
-        printf("Receiving message for id $id with $length bytes.\n");
+        // printf("Receiving message for id $id with $length bytes.\n");
 
         socket_recv($client, $payload, $length, MSG_WAITALL);
     }

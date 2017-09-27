@@ -43,7 +43,7 @@ function debug_book($book)
 
 function debug_catalog_item($item)
 {
-    if (!debug_validate($item))
+    if (!debug_validate($item) || $item->getId() === -1)
         return;
 
     printf("[CATALOG ITEM]\n");

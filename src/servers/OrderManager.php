@@ -43,11 +43,9 @@ class OrderManager extends Server
         $update->setId($id);
         $update->setCount($count);
 
-        // printf("\n");
-
         $response = $this->request('catalog', 'UPDATE_COUNT', $update);
         $item = new Messages\CatalogItem();
-        // $item->mergeFromString($response);
+        $item->mergeFromString($response);
 
         return $item;
     }
