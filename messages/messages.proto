@@ -9,6 +9,26 @@ message Choice {
     string name_search = 3;
     float place_holder = 4;
 }
+
+message Catalog {
+
+    repeated CatalogItem items = 1;
+}
+
+message CatalogItem {
+
+    int32 id = 1;
+    Book book = 2;
+    int32 count = 3;
+}
+
+message Book {
+    
+    string name = 1;
+    float price = 2;
+}
+ 
+
 // id_message = 1 -> procura(nome)/consultaNome(nome)
 // id_message = 2 -> detalhes(id)/consulta(id)
 // id_message = 3 -> compra(id)

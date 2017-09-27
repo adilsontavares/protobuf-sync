@@ -4,29 +4,31 @@
 
 namespace Messages;
 
+require_once __DIR__ . "/../GPBMetadata/Messages.php";
+
 use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Protobuf type <code>Messages.Choice</code>
+ * Generated from protobuf message <code>Messages.Choice</code>
  */
 class Choice extends \Google\Protobuf\Internal\Message
 {
     /**
-     * <code>int32 id_message = 1;</code>
+     * Generated from protobuf field <code>int32 id_message = 1;</code>
      */
     private $id_message = 0;
     /**
-     * <code>int32 id_search = 2;</code>
+     * Generated from protobuf field <code>int32 id_search = 2;</code>
      */
     private $id_search = 0;
     /**
-     * <code>string name_search = 3;</code>
+     * Generated from protobuf field <code>string name_search = 3;</code>
      */
     private $name_search = '';
     /**
-     * <code>float place_holder = 4;</code>
+     * Generated from protobuf field <code>float place_holder = 4;</code>
      */
     private $place_holder = 0.0;
 
@@ -36,7 +38,8 @@ class Choice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 id_message = 1;</code>
+     * Generated from protobuf field <code>int32 id_message = 1;</code>
+     * @return int
      */
     public function getIdMessage()
     {
@@ -44,16 +47,21 @@ class Choice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 id_message = 1;</code>
+     * Generated from protobuf field <code>int32 id_message = 1;</code>
+     * @param int $var
+     * @return $this
      */
     public function setIdMessage($var)
     {
         GPBUtil::checkInt32($var);
         $this->id_message = $var;
+
+        return $this;
     }
 
     /**
-     * <code>int32 id_search = 2;</code>
+     * Generated from protobuf field <code>int32 id_search = 2;</code>
+     * @return int
      */
     public function getIdSearch()
     {
@@ -61,16 +69,21 @@ class Choice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>int32 id_search = 2;</code>
+     * Generated from protobuf field <code>int32 id_search = 2;</code>
+     * @param int $var
+     * @return $this
      */
     public function setIdSearch($var)
     {
         GPBUtil::checkInt32($var);
         $this->id_search = $var;
+
+        return $this;
     }
 
     /**
-     * <code>string name_search = 3;</code>
+     * Generated from protobuf field <code>string name_search = 3;</code>
+     * @return string
      */
     public function getNameSearch()
     {
@@ -78,16 +91,21 @@ class Choice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>string name_search = 3;</code>
+     * Generated from protobuf field <code>string name_search = 3;</code>
+     * @param string $var
+     * @return $this
      */
     public function setNameSearch($var)
     {
         GPBUtil::checkString($var, True);
         $this->name_search = $var;
+
+        return $this;
     }
 
     /**
-     * <code>float place_holder = 4;</code>
+     * Generated from protobuf field <code>float place_holder = 4;</code>
+     * @return float
      */
     public function getPlaceHolder()
     {
@@ -95,12 +113,16 @@ class Choice extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * <code>float place_holder = 4;</code>
+     * Generated from protobuf field <code>float place_holder = 4;</code>
+     * @param float $var
+     * @return $this
      */
     public function setPlaceHolder($var)
     {
         GPBUtil::checkFloat($var);
         $this->place_holder = $var;
+
+        return $this;
     }
 
 }

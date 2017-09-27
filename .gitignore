@@ -6,4 +6,4 @@ composer.phar
 # composer.lock
 
 /src/GPBMetadata
-/src/Itc
+/docs
