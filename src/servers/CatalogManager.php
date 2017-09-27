@@ -7,6 +7,9 @@ require_once __DIR__ . '/../Messages/UpdateCatalogItemCount.php';
 require_once __DIR__ . '/../Messages/UpdateBookPrice.php';
 require_once __DIR__ . '/../Bridge/FromMongo.php';
 
+/**
+* Catalog Manager Server's class.
+*/
 class CatalogManager extends Server
 {
     static $SEARCH = 1;

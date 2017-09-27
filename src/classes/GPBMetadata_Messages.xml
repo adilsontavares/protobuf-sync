@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="GPBMetadata\Messages" namespace="GPBMetadata" name="Messages" abstract="false" final="false" start="7" end="32">
+  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/GPBMetadata" file="Messages.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/GPBMetadata/Messages.php" size="1223" time="2017-09-27T18:16:29+00:00" unixtime="1506536189" sha1="2a29a2f7d3efe0dcff3f43d648df9227aad41a38" relative="GPBMetadata/Messages.php"/>
+  <member name="is_initialized" default="false" type="boolean" visibility="public" static="true" line="9"/>
+  <method name="initOnce" start="11" end="31" abstract="false" final="false" static="true" visibility="public"/>
+</class>

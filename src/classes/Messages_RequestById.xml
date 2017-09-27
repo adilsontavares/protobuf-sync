@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Messages\RequestById" namespace="Messages" name="RequestById" abstract="false" final="false" start="14" end="48">
+  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages" file="RequestById.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages/RequestById.php" size="1013" time="2017-09-27T22:07:39+00:00" unixtime="1506550059" sha1="d2af602572c960d61636c101afa819cfb2cba13a" relative="Messages/RequestById.php"/>
+  <docblock>
+    <description compact="Generated from protobuf message &lt;code&gt;Messages.RequestById&lt;/code&gt;"/>
+  </docblock>
+  <extends full="Google\Protobuf\Internal\Message" namespace="Google\Protobuf\Internal" name="Message" unresolved="true"/>
+  <member name="id" default="0" type="integer" visibility="private" static="false" line="19">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id = 1;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="21" end="24" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getId" start="30" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id = 1;&lt;/code&gt;"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="setId" start="40" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id = 1;&lt;/code&gt;"/>
+      <param type="int" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+</class>

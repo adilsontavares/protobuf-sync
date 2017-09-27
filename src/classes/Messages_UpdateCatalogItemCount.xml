@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Messages\UpdateCatalogItemCount" namespace="Messages" name="UpdateCatalogItemCount" abstract="false" final="false" start="14" end="74">
+  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages" file="UpdateCatalogItemCount.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages/UpdateCatalogItemCount.php" size="1579" time="2017-09-27T22:07:39+00:00" unixtime="1506550059" sha1="40690f5ec90024b6d5a5d54a7e1db66b8f92bef7" relative="Messages/UpdateCatalogItemCount.php"/>
+  <docblock>
+    <description compact="Generated from protobuf message &lt;code&gt;Messages.UpdateCatalogItemCount&lt;/code&gt;"/>
+  </docblock>
+  <extends full="Google\Protobuf\Internal\Message" namespace="Google\Protobuf\Internal" name="Message" unresolved="true"/>
+  <member name="id" default="0" type="integer" visibility="private" static="false" line="19">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id = 1;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <member name="count" default="0" type="integer" visibility="private" static="false" line="23">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 count = 2;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="25" end="28" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getId" start="34" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id = 1;&lt;/code&gt;"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="setId" start="44" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id = 1;&lt;/code&gt;"/>
+      <param type="int" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCount" start="56" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 count = 2;&lt;/code&gt;"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="setCount" start="66" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 count = 2;&lt;/code&gt;"/>
+      <param type="int" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+</class>

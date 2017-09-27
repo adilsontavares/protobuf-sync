@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="CatalogManager" namespace="" name="CatalogManager" abstract="false" final="false" start="10" end="97">
+  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/servers" file="CatalogManager.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/servers/CatalogManager.php" size="2625" time="2017-09-27T22:07:39+00:00" unixtime="1506550059" sha1="b00debc644f42f644f76b06ab76a40d7e2bf9577" relative="servers/CatalogManager.php"/>
+  <extends full="Server" namespace="" name="Server"/>
+  <member name="SEARCH" default="1" type="integer" visibility="public" static="true" line="12"/>
+  <member name="FIND" default="2" type="integer" visibility="public" static="true" line="13"/>
+  <member name="UPDATE_PRICE" default="3" type="integer" visibility="public" static="true" line="14"/>
+  <member name="UPDATE_COUNT" default="4" type="integer" visibility="public" static="true" line="15"/>
+  <constructor name="__construct" start="17" end="25" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="search" start="27" end="45" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="$response = new Messages\Books();" line="41"/>
+      <comment value="$response-&gt;setBooks([$hue]);" line="42"/>
+    </inline>
+  </method>
+  <method name="find" start="47" end="56" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updatePrice" start="58" end="76" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateCount" start="78" end="96" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="Server" namespace="" name="Server">
+    <member name="collection" visibility="public" static="false" line="7"/>
+    <member name="database" visibility="public" static="false" line="8"/>
+    <member name="client" visibility="public" static="false" line="9"/>
+    <member name="config" visibility="public" static="false" line="10"/>
+    <constructor name="__construct" start="17" end="24" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Construct $name - Server's ID $actions - Server's Action. Example: Find a book, Search by ID, Buy a book, etc.."/>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="actions" byreference="false" type="{unknown}"/>
+    </constructor>
+    <method name="run" start="29" end="45" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Run This's the function that put the server on running. Listing to a socket."/>
+      </docblock>
+    </method>
+    <method name="receiveRequest" start="53" end="64" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="ReceiveRequest This's the function receive: $client - A client to connect through socket $id - An ID specifying which action the Server will do.">$payload - The message.</description>
+      </docblock>
+      <parameter name="client" byreference="false" type="{unknown}"/>
+      <parameter name="id" byreference="true" type="{unknown}"/>
+      <parameter name="payload" byreference="true" type="{unknown}"/>
+    </method>
+    <method name="sendResponse" start="66" end="72" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="sock" byreference="false" type="{unknown}"/>
+      <parameter name="data" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="receiveResponse" start="74" end="84" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="client" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="sendRequest" start="86" end="92" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="sock" byreference="false" type="{unknown}"/>
+      <parameter name="id" byreference="false" type="{unknown}"/>
+      <parameter name="data" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="sendRequestTo" start="94" end="103" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="server" byreference="false" type="{unknown}"/>
+      <parameter name="id" byreference="false" type="{unknown}"/>
+      <parameter name="data" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="process" start="105" end="108" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="id" byreference="false" type="{unknown}"/>
+      <parameter name="data" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="request" start="110" end="118" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="target" byreference="false" type="{unknown}"/>
+      <parameter name="messageId" byreference="false" type="{unknown}"/>
+      <parameter name="data" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+</class>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src" basedir="/home/loezer/ASD/2trabalho/protobuf-sync/src">
+  <namespace name="Messages">
+    <class name="RequestByQuery" src="Messages/RequestByQuery.php" description="Generated from protobuf message &lt;code&gt;Messages.RequestByQuery&lt;/code&gt;" xml="classes/Messages_RequestByQuery.xml"/>
+    <class name="CatalogItem" src="Messages/CatalogItem.php" description="Generated from protobuf message &lt;code&gt;Messages.CatalogItem&lt;/code&gt;" xml="classes/Messages_CatalogItem.xml"/>
+    <class name="Choice" src="Messages/Choice.php" description="Generated from protobuf message &lt;code&gt;Messages.Choice&lt;/code&gt;" xml="classes/Messages_Choice.xml"/>
+    <class name="UpdateBookPrice" src="Messages/UpdateBookPrice.php" description="Generated from protobuf message &lt;code&gt;Messages.UpdateBookPrice&lt;/code&gt;" xml="classes/Messages_UpdateBookPrice.xml"/>
+    <class name="UpdateCatalogItemCount" src="Messages/UpdateCatalogItemCount.php" description="Generated from protobuf message &lt;code&gt;Messages.UpdateCatalogItemCount&lt;/code&gt;" xml="classes/Messages_UpdateCatalogItemCount.xml"/>
+    <class name="Book" src="Messages/Book.php" description="Generated from protobuf message &lt;code&gt;Messages.Book&lt;/code&gt;" xml="classes/Messages_Book.xml"/>
+    <class name="Catalog" src="Messages/Catalog.php" description="Generated from protobuf message &lt;code&gt;Messages.Catalog&lt;/code&gt;" xml="classes/Messages_Catalog.xml"/>
+    <class name="Books" src="Messages/Books.php" description="Generated from protobuf message &lt;code&gt;Messages.Books&lt;/code&gt;" xml="classes/Messages_Books.xml"/>
+    <class name="RequestById" src="Messages/RequestById.php" description="Generated from protobuf message &lt;code&gt;Messages.RequestById&lt;/code&gt;" xml="classes/Messages_RequestById.xml"/>
+  </namespace>
+  <namespace name="">
+    <class name="ServerConfig" src="Config/Servers.php" xml="classes/ServerConfig.xml"/>
+    
+    <class name="CatalogManager" src="servers/CatalogManager.php" xml="classes/CatalogManager.xml"/>
+    <class name="OrderManager" src="servers/OrderManager.php" xml="classes/OrderManager.xml"/>
+    <class name="FrontEnd" src="servers/FrontEnd.php" xml="classes/FrontEnd.xml"/>
+  <class name="Server" src="servers/Server.php" xml="classes/Server.xml"/></namespace>
+  <namespace name="GPBMetadata">
+    <class name="Messages" src="GPBMetadata/Messages.php" xml="classes/GPBMetadata_Messages.xml"/>
+  </namespace>
+</index>

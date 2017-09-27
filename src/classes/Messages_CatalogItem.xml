@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Messages\CatalogItem" namespace="Messages" name="CatalogItem" abstract="false" final="false" start="14" end="100">
+  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages" file="CatalogItem.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages/CatalogItem.php" size="2170" time="2017-09-27T22:07:39+00:00" unixtime="1506550059" sha1="1373a40fedd35a9c99b4707745bea6f9b1e4de1f" relative="Messages/CatalogItem.php"/>
+  <docblock>
+    <description compact="Generated from protobuf message &lt;code&gt;Messages.CatalogItem&lt;/code&gt;"/>
+  </docblock>
+  <extends full="Google\Protobuf\Internal\Message" namespace="Google\Protobuf\Internal" name="Message" unresolved="true"/>
+  <member name="id" default="0" type="integer" visibility="private" static="false" line="19">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id = 1;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <member name="book" default="NULL" visibility="private" static="false" line="23">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;.Messages.Book book = 2;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <member name="count" default="0" type="integer" visibility="private" static="false" line="27">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 count = 3;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="29" end="32" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getId" start="38" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id = 1;&lt;/code&gt;"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="setId" start="48" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id = 1;&lt;/code&gt;"/>
+      <param type="int" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBook" start="60" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;.Messages.Book book = 2;&lt;/code&gt;"/>
+      <return type="object">
+        <type full="\Messages\Book" namespace="\Messages" name="Book"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setBook" start="70" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;.Messages.Book book = 2;&lt;/code&gt;"/>
+      <param type="object" variable="$var">
+        <type full="\Messages\Book" namespace="\Messages" name="Book"/>
+      </param>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCount" start="82" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 count = 3;&lt;/code&gt;"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="setCount" start="92" end="98" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 count = 3;&lt;/code&gt;"/>
+      <param type="int" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+</class>

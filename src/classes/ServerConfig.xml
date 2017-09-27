@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="ServerConfig" namespace="" name="ServerConfig" abstract="false" final="false" start="2" end="24">
+  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/Config" file="Servers.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/Config/Servers.php" size="415" time="2017-09-27T22:07:39+00:00" unixtime="1506550059" sha1="5c74e9337c4a9d9a12629907dcd8800f2d44fd22" relative="Config/Servers.php"/>
+  <member name="front" default="" type="array" visibility="public" static="true" line="4"/>
+  <member name="catalog" default="" type="array" visibility="public" static="true" line="11"/>
+  <member name="order" default="" type="array" visibility="public" static="true" line="18"/>
+</class>

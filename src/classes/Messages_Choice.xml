@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Messages\Choice" namespace="Messages" name="Choice" abstract="false" final="false" start="14" end="126">
+  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages" file="Choice.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages/Choice.php" size="2850" time="2017-09-27T22:07:39+00:00" unixtime="1506550059" sha1="5639461bdd97ee2a68110e5b408ec93a9e6629bd" relative="Messages/Choice.php"/>
+  <docblock>
+    <description compact="Generated from protobuf message &lt;code&gt;Messages.Choice&lt;/code&gt;"/>
+  </docblock>
+  <extends full="Google\Protobuf\Internal\Message" namespace="Google\Protobuf\Internal" name="Message" unresolved="true"/>
+  <member name="id_message" default="0" type="integer" visibility="private" static="false" line="19">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id_message = 1;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <member name="id_search" default="0" type="integer" visibility="private" static="false" line="23">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id_search = 2;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <member name="name_search" default="''" type="string" visibility="private" static="false" line="27">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;string name_search = 3;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <member name="place_holder" default="0.0" type="float" visibility="private" static="false" line="31">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;float place_holder = 4;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="33" end="36" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getIdMessage" start="42" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id_message = 1;&lt;/code&gt;"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="setIdMessage" start="52" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id_message = 1;&lt;/code&gt;"/>
+      <param type="int" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getIdSearch" start="64" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id_search = 2;&lt;/code&gt;"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="setIdSearch" start="74" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;int32 id_search = 2;&lt;/code&gt;"/>
+      <param type="int" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getNameSearch" start="86" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;string name_search = 3;&lt;/code&gt;"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setNameSearch" start="96" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;string name_search = 3;&lt;/code&gt;"/>
+      <param type="string" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPlaceHolder" start="108" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;float place_holder = 4;&lt;/code&gt;"/>
+      <return type="float"/>
+    </docblock>
+  </method>
+  <method name="setPlaceHolder" start="118" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;float place_holder = 4;&lt;/code&gt;"/>
+      <param type="float" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+</class>

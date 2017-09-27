@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Messages\Books" namespace="Messages" name="Books" abstract="false" final="false" start="14" end="48">
+  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages" file="Books.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages/Books.php" size="1246" time="2017-09-27T22:07:39+00:00" unixtime="1506550059" sha1="4625b3e1955a9afabc363007d8f6586ad5a32439" relative="Messages/Books.php"/>
+  <docblock>
+    <description compact="Generated from protobuf message &lt;code&gt;Messages.Books&lt;/code&gt;"/>
+  </docblock>
+  <extends full="Google\Protobuf\Internal\Message" namespace="Google\Protobuf\Internal" name="Message" unresolved="true"/>
+  <member name="books" visibility="private" static="false" line="19">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;repeated .Messages.Book books = 1;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="21" end="24" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getBooks" start="30" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;repeated .Messages.Book books = 1;&lt;/code&gt;"/>
+      <return type="object">
+        <type full="\Google\Protobuf\Internal\RepeatedField" namespace="\Google\Protobuf\Internal" name="RepeatedField"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setBooks" start="40" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;repeated .Messages.Book books = 1;&lt;/code&gt;"/>
+      <param type="array" variable="$var" of="object">
+        <type full="\Messages\Book[]|\Google\Protobuf\Internal\RepeatedFie" namespace="\Messages\Book[]|\Google\Protobuf\Internal" name="RepeatedFie"/>
+      </param>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+</class>

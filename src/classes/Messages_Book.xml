@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Messages\Book" namespace="Messages" name="Book" abstract="false" final="false" start="14" end="74">
+  <file path="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages" file="Book.php" realpath="/home/loezer/ASD/2trabalho/protobuf-sync/src/Messages/Book.php" size="1582" time="2017-09-27T22:07:39+00:00" unixtime="1506550059" sha1="3d1c189e8a73cdc9bca680b95bf0a3d09906e7a1" relative="Messages/Book.php"/>
+  <docblock>
+    <description compact="Generated from protobuf message &lt;code&gt;Messages.Book&lt;/code&gt;"/>
+  </docblock>
+  <extends full="Google\Protobuf\Internal\Message" namespace="Google\Protobuf\Internal" name="Message" unresolved="true"/>
+  <member name="name" default="''" type="string" visibility="private" static="false" line="19">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;string name = 1;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <member name="price" default="0.0" type="float" visibility="private" static="false" line="23">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;float price = 2;&lt;/code&gt;"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="25" end="28" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getName" start="34" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;string name = 1;&lt;/code&gt;"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setName" start="44" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;string name = 1;&lt;/code&gt;"/>
+      <param type="string" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPrice" start="56" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;float price = 2;&lt;/code&gt;"/>
+      <return type="float"/>
+    </docblock>
+  </method>
+  <method name="setPrice" start="66" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generated from protobuf field &lt;code&gt;float price = 2;&lt;/code&gt;"/>
+      <param type="float" variable="$var"/>
+      <return type="object">
+        <type full="Messages\$this" namespace="Messages" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </method>
+</class>
