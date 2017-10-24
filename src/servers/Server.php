@@ -74,7 +74,6 @@ class Server
         $length = $header['length'];
 
         socket_recv($client, $payload, $length, MSG_WAITALL);
-        var_dump($payload);
 
         $req = new Messages\Request();
         $req->mergeFromString($payload);
