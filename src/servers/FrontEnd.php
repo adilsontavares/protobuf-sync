@@ -83,7 +83,7 @@ class FrontEnd extends Server
             echo "1. Search.\n";
             echo "2. Details.\n";
             echo "3. Buy.\n";
-            echo "4. Debug.\n";
+            // echo "4. Debug.\n";
             echo "-> Option: ";
 
             fscanf($this->stdin, "%d", $option);
@@ -93,7 +93,7 @@ class FrontEnd extends Server
                 case 1: $this->menuSearch(); break;
                 case 2: $this->menuDetails(); break;
                 case 3: $this->menuBuy(); break;
-                case 4: $this->menuDebug(); break;
+                // case 4: $this->menuDebug(); break;
             }
             
             printf("\n");
