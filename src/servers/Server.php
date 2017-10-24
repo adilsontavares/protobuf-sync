@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../Config/Servers.php';
+require_once __DIR__ . '/../Messages/Request.php';
 
 
 /**
@@ -68,15 +69,16 @@ class Server
     */
     function receiveRequest($client, &$id, &$payload)
     {
-        socket_recv($client, $request, 8, MSG_WAITALL);
-        $header = unpack("Lid/Llength", $request);
-
-        $id = $header['id'];
+        socket_recv($client, $request, 4, MSG_WAITALL);
+        $header = unpack("Llength", $request);
         $length = $header['length'];
-        
-        // printf("Receiving message for id $id with $length bytes.\n");
 
         socket_recv($client, $payload, $length, MSG_WAITALL);
+        var_dump($payload);
+
+        $req = new Messages\Request();
+        $req->mergeFromString($payload);
+        $id = $req->getType();
     }
     /**
     * 
@@ -116,10 +118,12 @@ class Server
     */
     function sendRequest($sock, $id, $data)
     {
+        $data->setRequestType($id);
         $payload = $data->serializeToString();
 
-        $data = pack("LLA*", $id, strlen($payload), $payload);
-        socket_send($sock, $data, strlen($payload) + 8, 0);
+        $data = pack("LA*", strlen($payload), $payload);
+
+        socket_send($sock, $data, strlen($payload) + 4, 0);
     }
     /**
     * 
