@@ -14,7 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class RequestByQuery extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string query = 1;</code>
+     * Generated from protobuf field <code>.Messages.RequestType requestType = 1;</code>
+     */
+    private $requestType = 0;
+    /**
+     * Generated from protobuf field <code>string query = 2;</code>
      */
     private $query = '';
 
@@ -24,7 +28,29 @@ class RequestByQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string query = 1;</code>
+     * Generated from protobuf field <code>.Messages.RequestType requestType = 1;</code>
+     * @return int
+     */
+    public function getRequestType()
+    {
+        return $this->requestType;
+    }
+
+    /**
+     * Generated from protobuf field <code>.Messages.RequestType requestType = 1;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRequestType($var)
+    {
+        GPBUtil::checkEnum($var, \Messages\RequestType::class);
+        $this->requestType = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string query = 2;</code>
      * @return string
      */
     public function getQuery()
@@ -33,7 +59,7 @@ class RequestByQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string query = 1;</code>
+     * Generated from protobuf field <code>string query = 2;</code>
      * @param string $var
      * @return $this
      */

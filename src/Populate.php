@@ -13,56 +13,56 @@
 
     $catalog->insertOne([
         '_id' => 1,
+        'price' => 18.75,
+        'count' => 3,
         'book' => [
-            'name' => 'Fundação',
-            'price' => 18.75
-        ],
-        'count' => 3
+            'name' => 'Fundação'
+        ]
     ]);
 
     $catalog->insertOne([
         '_id' => 2,
+        'price' => 24.00,
+        'count' => 46,
         'book' => [
-            'name' => 'Fundação e Império',
-            'price' => 24.00
-        ],
-        'count' => 46
+            'name' => 'Fundação e Império'
+        ]
     ]);
 
     $catalog->insertOne([
         '_id' => 3,
+        'price' => 12.50,
+        'count' => 54,
         'book' => [
-            'name' => 'Animal Farm',
-            'price' => 12.50
-        ],
-        'count' => 54
+            'name' => 'Animal Farm'
+        ]
     ]);
 
     $catalog->insertOne([
         '_id' => 4,
+        'price' => 32.00,
+        'count' => 78,
         'book' => [
-            'name' => 'Battle Royale',
-            'price' => 32.00
-        ],
-        'count' => 78
+            'name' => 'Battle Royale'
+        ]
     ]);
 
     $catalog->insertOne([
         '_id' => 5,
+        'price' => 0.99,
+        'count' => 48,
         'book' => [
-            'name' => 'Pequeno Príncipe',
-            'price' => 0.99
-        ],
-        'count' => 48
+            'name' => 'Pequeno Príncipe'
+        ]
     ]);
 
     $catalog->insertOne([
         '_id' => 6,
+        'price' => 15.75,
+        'count' => 302,
         'book' => [
-            'name' => 'Colorless Tsukuru Tazaki and His Years of Pilgrimage',
-            'price' => 15.75
-        ],
-        'count' => 302
+            'name' => 'Colorless Tsukuru Tazaki and His Years of Pilgrimage'
+        ]
     ]);
 
     echo "ok\n";

@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/Messages/Book.php";
-require_once __DIR__ . "/Messages/CatalogItem.php";
+require_once __DIR__ . "/Messages/Catalog.php";
 
 function debug_validate($item)
 {
@@ -38,7 +38,6 @@ function debug_book($book)
 
     printf("[BOOK]\n");
     printf("- name:  %s\n", $book->getName());
-    printf("- price: %d\n", $book->getPrice());
 }
 
 function debug_catalog_item($item)

@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../Messages/Book.php';
-require_once __DIR__ . '/../Messages/CatalogItem.php';
+require_once __DIR__ . '/../Messages/Catalog.php';
 
 function many($items, $func) {
 
@@ -36,14 +36,13 @@ function to_book($data) {
     }
     
     assign($book, $data, 'name');
-    assign($book, $data, 'price');
 
     return $book;
 }
 
 function to_catalog($data) {
 
-    $item = new Messages\CatalogItem();
+    $item = new Messages\Catalog();
 
     if (!$data)
     {
@@ -53,6 +52,7 @@ function to_catalog($data) {
     
     assign($item, $data, 'id');
     assign($item, $data, 'count');
+    assign($item, $data, 'price');
 
     $item->setBook(to_book($data['book']));
 

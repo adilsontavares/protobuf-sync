@@ -14,9 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class Catalog extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .Messages.CatalogItem items = 1;</code>
+     * Generated from protobuf field <code>int32 id = 1;</code>
      */
-    private $items;
+    private $id = 0;
+    /**
+     * Generated from protobuf field <code>.Messages.Book book = 2;</code>
+     */
+    private $book = null;
+    /**
+     * Generated from protobuf field <code>int32 count = 3;</code>
+     */
+    private $count = 0;
+    /**
+     * Generated from protobuf field <code>float price = 4;</code>
+     */
+    private $price = 0.0;
 
     public function __construct() {
         \GPBMetadata\Messages::initOnce();
@@ -24,23 +36,89 @@ class Catalog extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Messages.CatalogItem items = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>int32 id = 1;</code>
+     * @return int
      */
-    public function getItems()
+    public function getId()
     {
-        return $this->items;
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .Messages.CatalogItem items = 1;</code>
-     * @param \Messages\CatalogItem[]|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>int32 id = 1;</code>
+     * @param int $var
      * @return $this
      */
-    public function setItems($var)
+    public function setId($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Messages\CatalogItem::class);
-        $this->items = $arr;
+        GPBUtil::checkInt32($var);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.Messages.Book book = 2;</code>
+     * @return \Messages\Book
+     */
+    public function getBook()
+    {
+        return $this->book;
+    }
+
+    /**
+     * Generated from protobuf field <code>.Messages.Book book = 2;</code>
+     * @param \Messages\Book $var
+     * @return $this
+     */
+    public function setBook($var)
+    {
+        GPBUtil::checkMessage($var, \Messages\Book::class);
+        $this->book = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 count = 3;</code>
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 count = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCount($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>float price = 4;</code>
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Generated from protobuf field <code>float price = 4;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setPrice($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->price = $var;
 
         return $this;
     }

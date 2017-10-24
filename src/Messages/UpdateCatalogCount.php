@@ -8,21 +8,19 @@ use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
-require_once __DIR__ . "/../Debug.php";
-
 /**
- * Generated from protobuf message <code>Messages.CatalogItem</code>
+ * Generated from protobuf message <code>Messages.UpdateCatalogCount</code>
  */
-class CatalogItem extends \Google\Protobuf\Internal\Message
+class UpdateCatalogCount extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>int32 id = 1;</code>
+     * Generated from protobuf field <code>.Messages.RequestType requestType = 1;</code>
+     */
+    private $requestType = 0;
+    /**
+     * Generated from protobuf field <code>int32 id = 2;</code>
      */
     private $id = 0;
-    /**
-     * Generated from protobuf field <code>.Messages.Book book = 2;</code>
-     */
-    private $book = null;
     /**
      * Generated from protobuf field <code>int32 count = 3;</code>
      */
@@ -34,7 +32,29 @@ class CatalogItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 id = 1;</code>
+     * Generated from protobuf field <code>.Messages.RequestType requestType = 1;</code>
+     * @return int
+     */
+    public function getRequestType()
+    {
+        return $this->requestType;
+    }
+
+    /**
+     * Generated from protobuf field <code>.Messages.RequestType requestType = 1;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRequestType($var)
+    {
+        GPBUtil::checkEnum($var, \Messages\RequestType::class);
+        $this->requestType = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 id = 2;</code>
      * @return int
      */
     public function getId()
@@ -43,7 +63,7 @@ class CatalogItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 id = 1;</code>
+     * Generated from protobuf field <code>int32 id = 2;</code>
      * @param int $var
      * @return $this
      */
@@ -51,28 +71,6 @@ class CatalogItem extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.Messages.Book book = 2;</code>
-     * @return \Messages\Book
-     */
-    public function getBook()
-    {
-        return $this->book;
-    }
-
-    /**
-     * Generated from protobuf field <code>.Messages.Book book = 2;</code>
-     * @param \Messages\Book $var
-     * @return $this
-     */
-    public function setBook($var)
-    {
-        GPBUtil::checkMessage($var, \Messages\Book::class);
-        $this->book = $var;
 
         return $this;
     }
@@ -99,9 +97,5 @@ class CatalogItem extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
-    public function debug()
-    {
-        debug_catalog_item($this);
-    }
 }
 

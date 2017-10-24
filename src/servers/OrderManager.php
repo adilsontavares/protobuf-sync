@@ -1,15 +1,15 @@
 <?php
 require_once __DIR__ . '/Server.php';
-require_once __DIR__ . '/../Messages/CatalogItem.php';
+require_once __DIR__ . '/../Messages/Catalog.php';
 require_once __DIR__ . '/../Messages/RequestById.php';
-require_once __DIR__ . '/../Messages/UpdateCatalogItemCount.php';
+require_once __DIR__ . '/../Messages/UpdateCatalogCount.php';
 
 /**
 * Order Manager Server. 
 */
 class OrderManager extends Server
 {
-    static $BUY = 1;
+    static $BUY = 4;
     /**
     * 
     * OrderManager Server's constructor. 
@@ -34,17 +34,17 @@ class OrderManager extends Server
         printf("Buy book with id %d.\n", $id);
         
         $response = $this->request('catalog', 'FIND', $request);
-        $item = new Messages\CatalogItem();
+        $item = new Messages\Catalog();
         $item->mergeFromString($response);
 
         $count = $item->getCount() - 1;
 
-        $update = new Messages\UpdateCatalogItemCount();
+        $update = new Messages\UpdateCatalogCount();
         $update->setId($id);
         $update->setCount($count);
 
         $response = $this->request('catalog', 'UPDATE_COUNT', $update);
-        $item = new Messages\CatalogItem();
+        $item = new Messages\Catalog();
         $item->mergeFromString($response);
 
         return $item;

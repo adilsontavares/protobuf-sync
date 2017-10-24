@@ -2,7 +2,7 @@
 require_once __DIR__ . '/Server.php';
 require_once __DIR__ . '/CatalogManager.php';
 require_once __DIR__ . '/OrderManager.php';
-require_once __DIR__ . '/../Messages/CatalogItems.php';
+require_once __DIR__ . '/../Messages/Catalogs.php';
 require_once __DIR__ . '/../Messages/RequestByQuery.php';
 require_once __DIR__ . '/../Messages/RequestById.php';
 require_once __DIR__ . '/../Debug.php';
@@ -32,7 +32,7 @@ class FrontEnd extends Server
         $data->setQuery($query);
 
         $response = $this->request('catalog', 'SEARCH', $data);
-        $item = new Messages\CatalogItems();
+        $item = new Messages\Catalogs();
         $item->mergeFromString($response);
 
         return $item;
@@ -49,7 +49,7 @@ class FrontEnd extends Server
         
         $response = $this->request('catalog', 'FIND', $data);
         
-        $item = new Messages\CatalogItem();
+        $item = new Messages\Catalog();
         $item->mergeFromString($response);
 
         return $item;
@@ -64,7 +64,7 @@ class FrontEnd extends Server
         $data->setId($id);
 
         $response = $this->request('order', 'BUY', $data);
-        $item = new Messages\CatalogItem();
+        $item = new Messages\Catalog();
         $item->mergeFromString($response);
 
         return $item;
@@ -121,7 +121,6 @@ class FrontEnd extends Server
         {
             printf("-\n");
             printf("BOOK NAME  = %s\n", $book->getName());
-            printf("BOOK PRICE = %d\n", $book->getPrice());
         }
     }
 

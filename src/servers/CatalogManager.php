@@ -3,9 +3,9 @@ require_once __DIR__ . '/Server.php';
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../Messages/Book.php';
 require_once __DIR__ . '/../Messages/Books.php';
-require_once __DIR__ . '/../Messages/CatalogItems.php';
+require_once __DIR__ . '/../Messages/Catalogs.php';
 require_once __DIR__ . '/../Messages/RequestByQuery.php';
-require_once __DIR__ . '/../Messages/UpdateCatalogItemCount.php';
+require_once __DIR__ . '/../Messages/UpdateCatalogCount.php';
 require_once __DIR__ . '/../Messages/UpdateBookPrice.php';
 require_once __DIR__ . '/../Bridge/FromMongo.php';
 
@@ -17,20 +17,20 @@ class CatalogManager extends Server
     /**
     * Search a Book Action ID.
     */
-    static $SEARCH = 1;
+    static $SEARCH = 0;
     /**
     * Find a Book Action ID.
     */
-    static $FIND = 2;
+    static $FIND = 1;
     /**
     * Update Book's Price Action ID.
     */
-    static $UPDATE_PRICE = 3;
+    static $UPDATE_PRICE = 2;
     /**
     * Update Book's Count Action ID.
     */
-    static $UPDATE_COUNT = 4;
-    static $DEBUG = 5;
+    static $UPDATE_COUNT = 3;
+    static $DEBUG = 4;
 
     /**
     * CatalogManager Server's constructor.
@@ -59,7 +59,7 @@ class CatalogManager extends Server
         $result = $this->db->catalog->find(['book.name' => new MongoDB\BSON\Regex($request->getQuery(), "i")]);
         $items = many($result, "to_catalog");
 
-        $response = new Messages\CatalogItems();
+        $response = new Messages\Catalogs();
         $response->setItems($items);
 
         return $response;
@@ -108,7 +108,7 @@ class CatalogManager extends Server
     */
     function updateCount($data)
     {
-        $request = new Messages\UpdateCatalogItemCount();
+        $request = new Messages\UpdateCatalogCount();
         $request->mergeFromString($data);
 
         $id = $request->getId();

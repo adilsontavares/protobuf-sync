@@ -8,8 +8,6 @@ use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
-require_once __DIR__ . "/../Debug.php";
-
 /**
  * Generated from protobuf message <code>Messages.Book</code>
  */
@@ -19,10 +17,6 @@ class Book extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 1;</code>
      */
     private $name = '';
-    /**
-     * Generated from protobuf field <code>float price = 2;</code>
-     */
-    private $price = 0.0;
 
     public function __construct() {
         \GPBMetadata\Messages::initOnce();
@@ -51,31 +45,5 @@ class Book extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
-    /**
-     * Generated from protobuf field <code>float price = 2;</code>
-     * @return float
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * Generated from protobuf field <code>float price = 2;</code>
-     * @param float $var
-     * @return $this
-     */
-    public function setPrice($var)
-    {
-        GPBUtil::checkFloat($var);
-        $this->price = $var;
-
-        return $this;
-    }
-
-    public function debug()
-    {
-        debug_book($this);
-    }
 }
 
