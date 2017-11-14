@@ -33,5 +33,21 @@ class RequestType
      * Generated from protobuf enum <code>GET_CATALOG = 5;</code>
      */
     const GET_CATALOG = 5;
+    /**
+     * Generated from protobuf enum <code>ELECTION = 100;</code>
+     */
+    const ELECTION = 100;
+    /**
+     * Generated from protobuf enum <code>ARE_YOU_ALIVE = 101;</code>
+     */
+    const ARE_YOU_ALIVE = 101;
+    /**
+     * Generated from protobuf enum <code>I_AM_ALIVE = 102;</code>
+     */
+    const I_AM_ALIVE = 102;
+    /**
+     * Generated from protobuf enum <code>UPDATE_COORDINATOR = 103;</code>
+     */
+    const UPDATE_COORDINATOR = 103;
 }
 

@@ -10,6 +10,25 @@ enum RequestType {
     UPDATE_CATALOG_COUNT = 3;
     BUY_BOOK = 4;
     GET_CATALOG = 5;
+
+    ELECTION = 100;
+    ARE_YOU_ALIVE = 101;
+    I_AM_ALIVE = 102;
+    UPDATE_COORDINATOR = 103;
+}
+
+// ELECTION
+
+message IAmAlive {
+
+    RequestType type = 1;
+    int32 id = 2;
+}
+
+message UpdateCoordinator {
+
+    RequestType type = 1;
+    int32 id = 2;
 }
 
 // REQUEST TO SERVERS

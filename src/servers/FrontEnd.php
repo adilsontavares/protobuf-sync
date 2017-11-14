@@ -5,6 +5,8 @@ require_once __DIR__ . '/OrderManager.php';
 require_once __DIR__ . '/../Messages/Catalogs.php';
 require_once __DIR__ . '/../Messages/RequestByQuery.php';
 require_once __DIR__ . '/../Messages/RequestById.php';
+require_once __DIR__ . '/../Messages/Request.php';
+require_once __DIR__ . '/../Messages/RequestType.php';
 require_once __DIR__ . '/../Debug.php';
 
 /**
@@ -16,9 +18,9 @@ class FrontEnd extends Server
     * 
     * FrontEnd Server's constructor.
     */
-    function __construct()
+    function __construct($config)
     {
-        parent::__construct('front', []);
+        parent::__construct($config, []);
         $this->stdin = fopen('php://stdin', 'r');
     }
     /**
@@ -69,6 +71,7 @@ class FrontEnd extends Server
 
         return $item;
     }
+
     /**
     * This function put the FrontEnd Server on running.
     */
@@ -83,7 +86,7 @@ class FrontEnd extends Server
             echo "1. Search.\n";
             echo "2. Details.\n";
             echo "3. Buy.\n";
-            // echo "4. Debug.\n";
+            echo "4. Election\n";
             echo "-> Option: ";
 
             fscanf($this->stdin, "%d", $option);
@@ -93,6 +96,7 @@ class FrontEnd extends Server
                 case 1: $this->menuSearch(); break;
                 case 2: $this->menuDetails(); break;
                 case 3: $this->menuBuy(); break;
+                case 4: $this->election(); break;
                 // case 4: $this->menuDebug(); break;
             }
             

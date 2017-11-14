@@ -1,25 +1,63 @@
 <?php
 class ServerConfig 
 {
-    static $front = 
-    [
-        'host' => '127.0.0.1',
-        'port' => 8810,
-        'className' => 'FrontEnd'
-    ];
+    static function config($name) {
 
-    static $catalog = 
-    [
-        'host' => '127.0.0.1',
-        'port' => 8811,
-        'className' => 'CatalogManager'
-    ];
+        foreach (ServerConfig::$servers as $config)
+            if ($config["name"] == $name)
+                return (object)$config;
 
-    static $order = 
+        return null;
+    }
+
+    static $servers = 
     [
-        'host' => '127.0.0.1',
-        'port' => 8812,
-        'className' => 'OrderManager'
+        [
+            'name' => 'catalog1',
+            'type' => 'catalog',
+            'id' => 1,
+            'host' => '127.0.0.1',
+            'port' => 8821,
+            'className' => 'CatalogManager'
+        ],
+        [
+            'name' => 'catalog2',
+            'type' => 'catalog',
+            'id' => 2,
+            'host' => '127.0.0.1',
+            'port' => 8822,
+            'className' => 'CatalogManager'
+        ],
+        [
+            'name' => 'catalog3',
+            'type' => 'catalog',
+            'id' => 3,
+            'host' => '127.0.0.1',
+            'port' => 8823,
+            'className' => 'CatalogManager'
+        ],
+        [
+            'name' => 'catalog4',
+            'type' => 'catalog',
+            'id' => 4,
+            'host' => '127.0.0.1',
+            'port' => 8824,
+            'className' => 'CatalogManager'
+        ],
+        [
+            'name' => 'front',
+            'type' => 'front',
+            'host' => '127.0.0.1',
+            'port' => 8810,
+            'className' => 'FrontEnd'
+        ],
+        [
+            'name' => 'order',
+            'type' => 'order',
+            'host' => '127.0.0.1',
+            'port' => 8830,
+            'className' => 'OrderManager'
+        ]
     ];
 }
 ?>

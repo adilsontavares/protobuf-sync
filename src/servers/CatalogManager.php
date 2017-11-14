@@ -35,9 +35,9 @@ class CatalogManager extends Server
     /**
     * CatalogManager Server's constructor.
     */
-    function __construct() 
+    function __construct($config)
     {
-        parent::__construct('catalog', [
+        parent::__construct($config, [
             CatalogManager::$SEARCH => "search",
             CatalogManager::$FIND => "find",
             CatalogManager::$UPDATE_PRICE => "updatePrice",
@@ -95,7 +95,7 @@ class CatalogManager extends Server
         $this->db->catalog->updateOne(['_id' => $id],
         [
             '$set' => [
-                'book.price' => $price
+                'price' => $price
             ]
         ]);
 

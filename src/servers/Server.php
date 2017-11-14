@@ -2,6 +2,8 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../Config/Servers.php';
 require_once __DIR__ . '/../Messages/Request.php';
+require_once __DIR__ . '/../Messages/IAmAlive.php';
+require_once __DIR__ . '/Election.php';
 
 
 /**
@@ -28,16 +30,16 @@ class Server
 
     /**
     * Server's constructor. 
-    * @param string $name, Server's ID
+    * @param string $config, Server's Configuration
     * @param array $actions, Server's Action. Example: Find a book, Search by ID, Buy a book, etc..
     */
-    function __construct($name, $actions)
+    function __construct($config, $actions)
     {
-        $this->name = $name;
         $this->client = new MongoDB\Client("mongodb://localhost:27017");
         $this->db = $this->client->book_store;
         $this->actions = $actions;
-        $this->config = (object)ServerConfig::${$name};
+        $this->config = $config;
+        $this->coordinator = false;
     }
     /**
     * 
@@ -53,13 +55,85 @@ class Server
 
         while (true)
         {
+            printf("WAITING FOR REQUESTS...\n");
+
             $client = socket_accept($sock);
+
+            printf("CLIENT CONNECTED! RECEIVING REQUEST...\n");
             $this->receiveRequest($client, $id, $request);
 
+            if ($id == RequestType::UPDATE_COORDINATOR)
+            {
+                $data = new Messages\UpdateCoordinator();
+                $data->mergeFromString($request);
+                
+                $this->coordinator = ServerConfig::byId($data->getId());
+
+                printf("Update coordinator: $this->coordinator->id\n");
+                return;
+            }
+
+            if ($id == RequestType::ARE_YOU_ALIVE)
+            {
+                $response = new Messages\IAmAlive();
+                $response->setType(RequestType::I_AM_ALIVE);
+                $response->setId($config->id);
+                $this->sendResponse($client, $response);
+
+                return;
+            }
+
+            printf("REQUEST RECEIVED!\n");
+            printf("PROCESSING REQUEST...!\n");
+
             $result = $this->process($id, $request);
+
+            printf("SENDING RESPONSE...\n");
             $this->sendResponse($client, $result);
         }
     }
+
+    function election() {
+
+        $id = $this->config->id;
+
+        printf("STARTING ELECTION!\n");
+
+        $elections = [];
+
+        foreach (ServerConfig::$servers as $server)
+        {
+            if ($server->id > $id)
+            {
+                $election = new Election($server);
+                $election->start();
+
+                array_push($selections, $election);
+            }
+        }
+
+        $response = false;
+
+        foreach ($elections as $election)
+        {
+            $election->join();
+            $response = $response || $election->success;
+        }
+
+        if (!$response)
+        {
+            $message = new Messages\UpdateCoordinator();
+            $message->setType(Messages\RequestType::UPDATE_COORDINATOR);
+            $message->setId($this->config->id);
+
+            foreach (ServerConfig::$servers as $server)
+            {
+                if ($server->id != $this->config->id)
+                    sendRequestTo($server->name, $message->getType(), null);
+            }
+        }
+    }
+
     /**
     * 
     * Receive request from a client through a socket.
@@ -70,8 +144,10 @@ class Server
     function receiveRequest($client, &$id, &$payload)
     {
         socket_recv($client, $request, 4, MSG_WAITALL);
-        $header = unpack("Llength", $request);
+        $header = unpack("Nlength", $request);
         $length = $header['length'];
+
+        print_r("LENGTH: $length\n");
 
         socket_recv($client, $payload, $length, MSG_WAITALL);
 
@@ -89,7 +165,7 @@ class Server
     {
         $payload = $data->serializeToString();
 
-        $data = pack("LA*", strlen($payload), $payload);
+        $data = pack("NA*", strlen($payload), $payload);
         socket_send($sock, $data, strlen($payload) + 4, 0);
     }
     /**
@@ -99,12 +175,20 @@ class Server
     */
     function receiveResponse($client)
     {
+        printf("WAITING RESPONSE...\n");
         socket_recv($client, $request, 4, MSG_WAITALL);
 
-        $header = unpack("Llength", $request);
+        printf("RECEIVED RESPONSE!\n");
+
+        $header = unpack("Nlength", $request);
         $length = $header['length'];
 
+        printf("RESPONSE LENGTH: %d.\n", $length);
+        printf("READING RESPONSE...\n");
+
         socket_recv($client, $payload, $length, MSG_WAITALL);
+
+        printf("RESPONSE READ!\n");
 
         return $payload;
     }
@@ -120,7 +204,7 @@ class Server
         $data->setRequestType($id);
         $payload = $data->serializeToString();
 
-        $data = pack("LA*", strlen($payload), $payload);
+        $data = pack("NA*", strlen($payload), $payload);
 
         socket_send($sock, $data, strlen($payload) + 4, 0);
     }
@@ -131,9 +215,9 @@ class Server
     * @param object $id, request's id.
     * @param object $data, protobuf object that will be sended to a socket. 
     */
-    function sendRequestTo($server, $id, $data)
+    function sendRequestTo($name, $id, $data)
     {
-        $config = (object)ServerConfig::${$server};
+        $config = ServerConfig::config($name);
         $sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         $conn = socket_connect($sock, $config->host, $config->port);
 
@@ -164,7 +248,10 @@ class Server
         $serverClass = $config->className;
         $id = $serverClass::${$messageId};
 
+        printf("SENDING REQUEST OF TYPE %d.\n", $messageId);
         $sock = $this->sendRequestTo($target, $id, $data);
+
+        printf("WAITING RESPONSE...\n");
         return $this->receiveResponse($sock);
     }
 }

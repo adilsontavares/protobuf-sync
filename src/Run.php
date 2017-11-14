@@ -7,12 +7,12 @@ require_once __DIR__ . '/Servers/FrontEnd.php';
 
 if ($argc <= 1) 
 {
-    printf("You must expose the server you want to start.\n");
+    printf("You must inform the server you want to start.\n");
     die("Ex: php Run.php <front, catalog, order>.\n");
 }
 
-$serverType = $argv[1];
-$config = (object)ServerConfig::${$serverType};
-$server = new $config->className();
+$name = $argv[1];
+$config = ServerConfig::config($name) or die("Server with name $name was not found.\n");
+$server = new $config->className((object)$config);
 $server->run();
 ?>

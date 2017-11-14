@@ -14,9 +14,9 @@ class OrderManager extends Server
     * 
     * OrderManager Server's constructor. 
     */
-    function __construct()
+    function __construct($config)
     {
-        parent::__construct('order', [
+        parent::__construct($config, [
             OrderManager::$BUY => "buy"
         ]);
     }
